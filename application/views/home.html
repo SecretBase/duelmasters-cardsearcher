@@ -50,8 +50,8 @@
 					</div>
 				</div>
 				<form class="" action="{{ site_url() }}">
-					<fieldset class="field select">
-						<legend>消費:</legend>
+					<div class="field select">
+						<label>消費:</label>
 						<select name="cost" id="cost">
 							<option value="">0</option>
 							<option value="1">1</option>
@@ -95,8 +95,8 @@
 							<option value="39">39</option>
 							<option value="40">40</option>
 						</select>
-					</fieldset>
-					<fieldset class="field checkbox">
+					</div>
+					<div class="field checkbox">
 						<legend>文明:</legend>
 						<label><input type="checkbox"><span></span>光</label>
 						<label><input type="checkbox"><span></span>水</label>
@@ -104,8 +104,8 @@
 						<label><input type="checkbox"><span></span>火</label>
 						<label><input type="checkbox"><span></span>自</label>
 						<label><input type="checkbox"><span></span>無</label>
-					</fieldset>
-					<fieldset class="field select">
+					</div>
+					<div class="field select">
 						<legend>種族:</legend>
 						<select name="race" id="race">
 							<option value="">全種族</option>
@@ -232,8 +232,8 @@
 							<option value="ワンダー・トリック">ワンダー・トリック</option>
 							<option value="ワールド・コマンド">ワールド・コマンド</option>
 						</select>
-					</fieldset>
-					<fieldset class="field select">
+					</div>
+					<div class="field select">
 						<legend>攻擊力:</legend>
 						<select name="power" id="power">
 							<option value="0">0000</option>
@@ -278,8 +278,8 @@
 							<option value="38000">38000</option>
 							<option value="39000">39000</option>
 						</select>
-					</fieldset>
-					<fieldset class="field checkbox">
+					</div>
+					<div class="field checkbox">
 						<legend>卡種:</legend>
 						<label><input type="checkbox" name="card_type[]"><span></span>生物</label>
 						<label><input type="checkbox" name="card_type[]"><span></span>進化生物</label>
@@ -294,8 +294,8 @@
 						<label><input type="checkbox" name="card_type[]"><span></span>龍心生物</label>
 						<label><input type="checkbox" name="card_type[]"><span></span>龍心要塞</label>
 						<label><input type="checkbox" name="card_type[]"><span></span>城</label>
-					</fieldset>
-					<fieldset class="field select">
+					</div>
+					<div class="field select">
 						<legend>系列:</legend>
 						<select name="set_code" id="set-code">
 							<option value="">全系列</option>
@@ -320,10 +320,14 @@
 							<option value="NET-004">NET-004 DR-オボロ2ndヒラメキスネーク</option>
 							<option value="NET-005">NET-005 DR-ギフトオーロラ</option>
 							<option value="NET-006">NET-006 DG-ギフトモルトMASΛ</option></select>
-					</fieldset>
-					<fieldset>
+					</div>
+					<div class="field recaptcha">
 						<div class="g-recaptcha" data-sitekey="6Lfj6f4SAAAAAFN_ESYfOMa9_HK2J445tiTql_xh"></div>
-					</fieldset>
+					</div>
+					<div class="actions">
+						<input type="submit" value="Search">
+						<input type="reset" value="Reset">
+					</div>
 				</form>
 			</div>
 		</div>
