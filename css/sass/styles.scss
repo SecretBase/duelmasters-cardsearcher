@@ -1,0 +1,129 @@
+/** Import libraries */
+@import "compass";
+@import "bourbon/bourbon";
+
+// /** Import CSS  */
+@import "CSS:../vendor/normalize";
+@import "CSS:../vendor/boilerplate";
+@import "CSS:../vendor/font-awesome.min";
+
+
+/** Import Constant */
+@import "constants";
+// @import "animation";
+
+body {
+  background-color: $light-gray;
+  color: $dark-gray;
+  font-family: $font;
+  font-size: 18px;
+  line-height: 1.4;
+  background-color: red;
+}
+
+h1 {
+  text-transform: capitalize;
+  font-style: italic;
+  border-bottom: 2px solid $red;
+  padding-left: 10px;
+  font-family: $font-heading;
+  font-weight: 700;
+  color: $red;
+  text-shadow: 0px 0px 10px $gold;
+}
+
+.content-wrap {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.fa {
+  width: 1em;
+  text-align: center;
+}
+
+%no-margin-top-bottom {
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+form {
+
+  @extend %no-margin-top-bottom;
+
+  border: 1px solid $gray;
+  padding: 20px;
+  @include border-radius(5px);
+}
+
+label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+fieldset legend {
+  margin: 0 0 0.3em 0;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  color: $blue;
+}
+
+.field {
+
+  margin: 10px 0;
+
+  &.checkbox {
+    
+    label {
+
+      display: inline-block;
+      cursor: pointer;
+      width: 20%;
+      margin: 2px 0;
+
+      input {
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+
+        & + span {
+          @extend .fa;
+          @extend .fa-square-o;
+          margin-right: 5px;
+        }
+
+        &:checked + span:before {
+          @extend .fa-check-square;
+          color: $blue;
+          @include animation(icon-checked 300ms ease-in-out);
+        }
+      }
+    }
+  }
+
+  &.radio {
+
+  }
+
+  &.select {
+
+    select {
+      display: block;
+      box-sizing: border-box;
+      min-width: 20%;
+      padding: 5px 0;
+    }
+  }
+}
+
+@import "responsive";

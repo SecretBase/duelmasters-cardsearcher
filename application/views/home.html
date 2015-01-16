@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="description" content="">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>DuelMaster Card Finder</title>
+	    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+		<link rel="icon" href="{{ base_url('img/favicon.ico') }}">
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+		<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+	    <link rel="stylesheet" href="{{ base_url('css/styles.css') }}">
+
+	    <script src="{{ base_url('js/vendor/modernizr.min.js') }}"></script>
+	    <script src='https://www.google.com/recaptcha/api.js'></script>
+	    <!--[if lte IE 8]><script src="{{ base_url('js/vendor/selectivizr-min.js') }}"></script><![endif]-->
+	    <script src="{{ base_url('js/vendor/plugins.js') }}"></script>
+	    <script src="{{ base_url('js/vendor/jquery.min.js') }}"></script>
+		<script src="{{ base_url('js/scripts.js') }}"></script>
+
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	    <!--script>
+	        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	        e.src='//www.google-analytics.com/analytics.js';
+	        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	        ga('create','UA-XXXXX-X');ga('send','pageview');
+	    </script-->
+	</head>
+	<body>
+		<!--[if lt IE 9]>
+	            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<header></header>
+		<div id="content">
+			<div class="content-wrap">
+				<h1>DuelMaster card finder</h1>
+				<div id="card-details" class="card-details">
+					<img src="" alt="">
+					<div class="description">
+						
+					</div>
+				</div>
+				<form class="" action="{{ site_url() }}">
+					<fieldset class="field select">
+						<legend>消費:</legend>
+						<select name="cost" id="cost">
+							<option value="">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
+							<option value="32">32</option>
+							<option value="33">33</option>
+							<option value="34">34</option>
+							<option value="35">35</option>
+							<option value="36">36</option>
+							<option value="37">37</option>
+							<option value="38">38</option>
+							<option value="39">39</option>
+							<option value="40">40</option>
+						</select>
+					</fieldset>
+					<fieldset class="field checkbox">
+						<legend>文明:</legend>
+						<label><input type="checkbox"><span></span>光</label>
+						<label><input type="checkbox"><span></span>水</label>
+						<label><input type="checkbox"><span></span>闇</label>
+						<label><input type="checkbox"><span></span>火</label>
+						<label><input type="checkbox"><span></span>自</label>
+						<label><input type="checkbox"><span></span>無</label>
+					</fieldset>
+					<fieldset class="field select">
+						<legend>種族:</legend>
+						<select name="race" id="race">
+							<option value="">全種族</option>
+							<option value="アウトレイジ">アウトレイジ</option>
+							<option value="アウトレイジMAX">アウトレイジMAX</option>
+							<option value="アウトレイジOMG">アウトレイジOMG</option>
+							<option value="アポロニア・ドラゴン">アポロニア・ドラゴン</option>
+							<option value="アンノイズ">アンノイズ</option>
+							<option value="アンノウン">アンノウン</option>
+							<option value="アーク・セラフィム">アーク・セラフィム</option>
+							<option value="アースイーター">アースイーター</option>
+							<option value="アース・ドラゴン">アース・ドラゴン</option>
+							<option value="アーマロイド">アーマロイド</option>
+							<option value="アーマード・ドラゴン">アーマード・ドラゴン</option>
+							<option value="アーマード・ワイバーン">アーマード・ワイバーン</option>
+							<option value="イニシエート">イニシエート</option>
+							<option value="エイリアン">エイリアン</option>
+							<option value="エメラルド・モンスター">エメラルド・モンスター</option>
+							<option value="エンジェル・コマンド">エンジェル・コマンド</option>
+							<option value="エンジェル・コマンド・ドラゴン">エンジェル・コマンド・ドラゴン</option>
+							<option value="オラクリオン">オラクリオン</option>
+							<option value="オラクル">オラクル</option>
+							<option value="オリジン">オリジン</option>
+							<option value="カレーパン">カレーパン</option>
+							<option value="ガイア・コマンド">ガイア・コマンド</option>
+							<option value="ガイアール・コマンド・ドラゴン">ガイアール・コマンド・ドラゴン</option>
+							<option value="ガーディアン">ガーディアン</option>
+							<option value="キカイヒーロー">キカイヒーロー</option>
+							<option value="キング・コマンド・ドラゴン">キング・コマンド・ドラゴン</option>
+							<option value="クリスタル・コマンド・ドラゴン">クリスタル・コマンド・ドラゴン</option>
+							<option value="グラディエーター">グラディエーター</option>
+							<option value="グランド・デビル">グランド・デビル</option>
+							<option value="グレートメカオー">グレートメカオー</option>
+							<option value="ゲル・フィッシュ">ゲル・フィッシュ</option>
+							<option value="コスモ・ウォーカー">コスモ・ウォーカー</option>
+							<option value="コマンド">コマンド (類別種族)</option>
+							<option value="コマンド・ドラゴン">コマンド・ドラゴン (類別種族)</option>
+							<option value="コロニー・ビートル">コロニー・ビートル</option>
+							<option value="ゴッド">ゴッド</option>
+							<option value="ゴッド・ノヴァ">ゴッド・ノヴァ</option>
+							<option value="ゴッド・ノヴァOMG">ゴッド・ノヴァOMG</option>
+							<option value="ゴースト">ゴースト</option>
+							<option value="サイバー">サイバー (類別種族)</option>
+							<option value="サイバーロード">サイバーロード</option>
+							<option value="サイバー・ウィルス">サイバー・ウィルス</option>
+							<option value="サイバー・コマンド">サイバー・コマンド</option>
+							<option value="サイバー・ムーン">サイバー・ムーン</option>
+							<option value="サバイバー">サバイバー</option>
+							<option value="サムライ">サムライ</option>
+							<option value="シノビ">シノビ</option>
+							<option value="シャイニング・コマンド・ドラゴン">シャイニング・コマンド・ドラゴン</option>
+							<option value="シャイン・モンスター">シャイン・モンスター</option>
+							<option value="ジャイアント">ジャイアント</option>
+							<option value="ジャイアント・インセクト">ジャイアント・インセクト</option>
+							<option value="ジャスティス・ウィング">ジャスティス・ウィング</option>
+							<option value="ジュラシック・コマンド・ドラゴン">ジュラシック・コマンド・ドラゴン</option>
+							<option value="スノーフェアリー">スノーフェアリー</option>
+							<option value="スピリット・クォーツ">スピリット・クォーツ</option>
+							<option value="スプラッシュ・クイーン">スプラッシュ・クイーン</option>
+							<option value="ゼニス">ゼニス</option>
+							<option value="ゼノパーツ">ゼノパーツ</option>
+							<option value="ダイナモ">ダイナモ</option>
+							<option value="ダークロード">ダークロード</option>
+							<option value="ダーク・モンスター">ダーク・モンスター</option>
+							<option value="チルドレン">チルドレン</option>
+							<option value="ティラノ・ドレイク">ティラノ・ドレイク</option>
+							<option value="デスパペット">デスパペット</option>
+							<option value="デビル・コマンド・ドラゴン">デビル・コマンド・ドラゴン</option>
+							<option value="デーモン・コマンド">デーモン・コマンド</option>
+							<option value="デーモン・コマンド・ドラゴン">デーモン・コマンド・ドラゴン</option>
+							<option value="トライストーン">トライストーン</option>
+							<option value="ドラグナー">ドラグナー</option>
+							<option value="ドラゴノイド">ドラゴノイド</option>
+							<option value="ドラゴン">ドラゴン (類別種族)</option>
+							<option value="ドラゴン・ゾンビ">ドラゴン・ゾンビ</option>
+							<option value="ドリームメイト">ドリームメイト</option>
+							<option value="ナイト">ナイト</option>
+							<option value="ハンター">ハンター</option>
+							<option value="バルーン・マッシュルーム">バルーン・マッシュルーム</option>
+							<option value="バーサーカー">バーサーカー</option>
+							<option value="パラサイトワーム">パラサイトワーム</option>
+							<option value="パンドラボックス">パンドラボックス</option>
+							<option value="ヒューマノイド">ヒューマノイド</option>
+							<option value="ヒューマノイド爆">ヒューマノイド爆</option>
+							<option value="ヒーロー">ヒーロー</option>
+							<option value="ビークル・ビー">ビークル・ビー</option>
+							<option value="ビーストフォーク">ビーストフォーク</option>
+							<option value="ビーストフォーク號">ビーストフォーク號</option>
+							<option value="ビースト・コマンド">ビースト・コマンド</option>
+							<option value="ファイアー・バード">ファイアー・バード</option>
+							<option value="ファンキー・ナイトメア">ファンキー・ナイトメア</option>
+							<option value="フェニックス">フェニックス</option>
+							<option value="フレイム・コマンド">フレイム・コマンド</option>
+							<option value="フレイム・モンスター">フレイム・モンスター</option>
+							<option value="ブラック・コマンド・ドラゴン">ブラック・コマンド・ドラゴン</option>
+							<option value="ブルー・コマンド・ドラゴン">ブルー・コマンド・ドラゴン</option>
+							<option value="ブルー・モンスター">ブルー・モンスター</option>
+							<option value="ブレイブ・スピリット">ブレイブ・スピリット</option>
+							<option value="ブレインジャッカー">ブレインジャッカー</option>
+							<option value="ヘドリアン">ヘドリアン</option>
+							<option value="ホワイト・コマンド・ドラゴン">ホワイト・コマンド・ドラゴン</option>
+							<option value="ホーン・ビースト">ホーン・ビースト</option>
+							<option value="ボルケーノ・ドラゴン">ボルケーノ・ドラゴン</option>
+							<option value="ポセイディア・ドラゴン">ポセイディア・ドラゴン</option>
+							<option value="マジカル・モンスター">マジカル・モンスター</option>
+							<option value="マーフォーク">マーフォーク</option>
+							<option value="ミステリー・トーテム">ミステリー・トーテム</option>
+							<option value="メカ・デル・ソル">メカ・デル・ソル</option>
+							<option value="メルト・ウォリアー">メルト・ウォリアー</option>
+							<option value="モンスター">モンスター (類別種族)</option>
+							<option value="ライトブリンガー">ライトブリンガー</option>
+							<option value="リキシ・コマンド・ドラゴン">リキシ・コマンド・ドラゴン</option>
+							<option value="リキッド・ピープル">リキッド・ピープル</option>
+							<option value="リキッド・ピープル閃">リキッド・ピープル閃</option>
+							<option value="リビング・デッド">リビング・デッド</option>
+							<option value="ルナティック・エンペラー">ルナティック・エンペラー</option>
+							<option value="ルナーズ・サンガイザー">ルナーズ・サンガイザー</option>
+							<option value="レインボー・コマンド・ドラゴン">レインボー・コマンド・ドラゴン</option>
+							<option value="レインボー・ファントム">レインボー・ファントム</option>
+							<option value="レッド・コマンド・ドラゴン">レッド・コマンド・ドラゴン</option>
+							<option value="ロスト・クルセイダー">ロスト・クルセイダー</option>
+							<option value="ロック・ビースト">ロック・ビースト</option>
+							<option value="ワイルド・ベジーズ">ワイルド・ベジーズ</option>
+							<option value="ワンダー・トリック">ワンダー・トリック</option>
+							<option value="ワールド・コマンド">ワールド・コマンド</option>
+						</select>
+					</fieldset>
+					<fieldset class="field select">
+						<legend>攻擊力:</legend>
+						<select name="power" id="power">
+							<option value="0">0000</option>
+							<option value="500">500</option>
+							<option value="1000">1000</option>
+							<option value="2000">2000</option>
+							<option value="3000">3000</option>
+							<option value="4000">4000</option>
+							<option value="5000">5000</option>
+							<option value="6000">6000</option>
+							<option value="7000">7000</option>
+							<option value="8000">8000</option>
+							<option value="9000">9000</option>
+							<option value="10000">10000</option>
+							<option value="11000">11000</option>
+							<option value="12000">12000</option>
+							<option value="13000">13000</option>
+							<option value="14000">14000</option>
+							<option value="15000">15000</option>
+							<option value="16000">16000</option>
+							<option value="17000">17000</option>
+							<option value="18000">18000</option>
+							<option value="19000">19000</option>
+							<option value="20000">20000</option>
+							<option value="21000">21000</option>
+							<option value="22000">22000</option>
+							<option value="23000">23000</option>
+							<option value="24000">24000</option>
+							<option value="25000">25000</option>
+							<option value="26000">26000</option>
+							<option value="27000">27000</option>
+							<option value="28000">28000</option>
+							<option value="29000">29000</option>
+							<option value="30000">30000</option>
+							<option value="31000">31000</option>
+							<option value="32000">32000</option>
+							<option value="33000">33000</option>
+							<option value="34000">34000</option>
+							<option value="35000">35000</option>
+							<option value="36000">36000</option>
+							<option value="37000">37000</option>
+							<option value="38000">38000</option>
+							<option value="39000">39000</option>
+						</select>
+					</fieldset>
+					<fieldset class="field checkbox">
+						<legend>卡種:</legend>
+						<label><input type="checkbox" name="card_type[]"><span></span>生物</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>進化生物</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>咒文</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>放逐生物</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>進化放逐生物</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>超次元生物</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>超次元進化生物</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>超次元超級生物</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>裝備</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>龍心武裝</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>龍心生物</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>龍心要塞</label>
+						<label><input type="checkbox" name="card_type[]"><span></span>城</label>
+					</fieldset>
+					<fieldset class="field select">
+						<legend>系列:</legend>
+						<select name="set_code" id="set-code">
+							<option value="">全系列</option>
+							<option value="DMD-15">DMD-15 熱血の戦闘龍</option>
+							<option value="DMD-16">DMD-16 正義の天聖龍</option>
+							<option value="DMD-17">DMD-17 神秘の結晶龍</option>
+							<option value="DMD-18">DMD-18 燃えよ龍剣ガイアール</option>
+							<option value="DMD-19">DMD-19 滅びの龍刃 ディアボロス</option>
+							<option value="DMR-11">DMR-11 ウルトラVマスター</option>
+							<option value="DMR-12">DMR-12 オメガ∞マックス</option>
+							<option value="DMR-13">DMR-13 ドラゴン・サーガ</option>
+							<option value="DMR-14">DMR-14 暴龍ガイグレン</option>
+							<option value="DMX-16">DMX-16 超王道戦略ファンタジスタ12</option>
+							<option value="DMX-17">DMX-17 龍の祭典! ドラゴン魂フェス!!</option>
+							<option value="DM-Y12">DM-Y12 第12期プロモーション・カード</option>
+							<option value="DM-Y13">DM-Y13 第13期プロモーション・カード</option>
+							<option value="DM-Sanctuary">DM-Sanctuary 殿堂</option>
+							<option value="DM-NEW">DM-NEW 【未發售卡牌】</option>
+							<option value="NET-001">NET-001 田園-龍要塞水單</option>
+							<option value="NET-002">NET-002 CK-龍帝式龍龍布丁</option>
+							<option value="NET-003">NET-003 CT-關東2014夏季大賽冠軍</option>
+							<option value="NET-004">NET-004 DR-オボロ2ndヒラメキスネーク</option>
+							<option value="NET-005">NET-005 DR-ギフトオーロラ</option>
+							<option value="NET-006">NET-006 DG-ギフトモルトMASΛ</option></select>
+					</fieldset>
+					<fieldset>
+						<div class="g-recaptcha" data-sitekey="6Lfj6f4SAAAAAFN_ESYfOMa9_HK2J445tiTql_xh"></div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		 <footer></footer>
+	</body>
+</html>
