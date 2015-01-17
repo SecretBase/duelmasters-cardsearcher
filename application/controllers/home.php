@@ -7,4 +7,10 @@ class Home extends MY_Controller {
 		$this->load->model('CardModel');
 		$this->twig->display('home.html', $this->data);
 	}
+
+	public function race_debug()
+	{
+		$this->load->model('RaceModel');
+		var_dump($this->RaceModel->get_all_race());
+	}
 }
