@@ -1,0 +1,24 @@
+@media only screen and (max-width: 1024px) {
+  
+  .content-wrap {
+    width: 90%;
+  }
+
+  .field {
+    
+    &.checkbox {
+
+    }
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  
+  .field {
+    &.select {
+      select {
+        width: 100%;
+      }
+    }
+  }
+}

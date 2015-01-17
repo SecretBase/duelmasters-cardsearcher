@@ -22,17 +22,16 @@ body {
 
 h1 {
   text-transform: capitalize;
-  font-style: italic;
-  border-bottom: 2px solid $red;
-  padding-left: 10px;
-  font-family: $font-heading;
   font-weight: 700;
+  font-style: italic;
+  font-family: $font-heading;
   color: $red;
   text-shadow: 0px 0px 10px $gold;
+  margin: 20px 0;
 }
 
 .content-wrap {
-  width: 980px;
+  width: 1000px;
   margin: 0 auto;
 }
 
@@ -79,16 +78,26 @@ h1 {
   }
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
 form {
   @extend %no-margin-top-bottom;
-  border: 1px solid $gray;
-  padding: 20px;
   @include border-radius(5px);
 }
 
 .field {
 
-  margin: 10px 0;
+  margin: 20px 0;
+
+  > span:first-child {
+    display: block;
+  }
 
   &.checkbox {
     
@@ -96,8 +105,7 @@ form {
 
       display: inline-block;
       cursor: pointer;
-      width: 20%;
-      margin: 2px 0;
+      margin: 5px 30px 5px 0;
 
       input {
         
@@ -134,8 +142,10 @@ form {
     select {
       display: block;
       box-sizing: border-box;
-      min-width: 20%;
       padding: 5px 0;
+      border: 1px solid $gray;
+      min-width: 200px;
+      @include border-radius(5px);
     }
   }
 
@@ -152,6 +162,19 @@ form {
   input[type="reset"] {
     @extend %button-styles;
   }
+}
+
+#search-form {
+  @extend .left;
+  max-width: 500px;
+  margin-bottom: 20px;
+  @include box-sizing(border-box);
+}
+
+#search-result {
+  @extend .left;
+  margin-bottom: 20px;
+  @extend %no-margin-top-bottom;
 }
 
 @import "responsive";

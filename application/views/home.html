@@ -14,8 +14,6 @@
 	    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
 		<link rel="icon" href="{{ base_url('img/favicon.ico') }}">
-		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
-		<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
 	    <link rel="stylesheet" href="{{ base_url('css/styles.css') }}">
 
 	    <script src="{{ base_url('js/vendor/modernizr.min.js') }}"></script>
@@ -43,13 +41,7 @@
 		<div id="content">
 			<div class="content-wrap">
 				<h1>DuelMaster card finder</h1>
-				<div id="card-details" class="card-details">
-					<img src="" alt="">
-					<div class="description">
-						
-					</div>
-				</div>
-				<form class="" action="{{ site_url() }}">
+				<form id="search-form" class="" action="{{ site_url() }}">
 					<div class="field select">
 						<label>消費:</label>
 						<select name="cost" id="cost">
@@ -97,7 +89,7 @@
 						</select>
 					</div>
 					<div class="field checkbox">
-						<legend>文明:</legend>
+						<span>文明:</span>
 						<label><input type="checkbox"><span></span>光</label>
 						<label><input type="checkbox"><span></span>水</label>
 						<label><input type="checkbox"><span></span>闇</label>
@@ -106,7 +98,7 @@
 						<label><input type="checkbox"><span></span>無</label>
 					</div>
 					<div class="field select">
-						<legend>種族:</legend>
+						<span>種族:</span>
 						<select name="race" id="race">
 							<option value="">全種族</option>
 							<option value="アウトレイジ">アウトレイジ</option>
@@ -234,7 +226,7 @@
 						</select>
 					</div>
 					<div class="field select">
-						<legend>攻擊力:</legend>
+						<span>攻擊力:</span>
 						<select name="power" id="power">
 							<option value="0">0000</option>
 							<option value="500">500</option>
@@ -280,7 +272,7 @@
 						</select>
 					</div>
 					<div class="field checkbox">
-						<legend>卡種:</legend>
+						<span>卡種:</span>
 						<label><input type="checkbox" name="card_type[]"><span></span>生物</label>
 						<label><input type="checkbox" name="card_type[]"><span></span>進化生物</label>
 						<label><input type="checkbox" name="card_type[]"><span></span>咒文</label>
@@ -296,7 +288,7 @@
 						<label><input type="checkbox" name="card_type[]"><span></span>城</label>
 					</div>
 					<div class="field select">
-						<legend>系列:</legend>
+						<span>系列:</span>
 						<select name="set_code" id="set-code">
 							<option value="">全系列</option>
 							<option value="DMD-15">DMD-15 熱血の戦闘龍</option>
@@ -321,16 +313,19 @@
 							<option value="NET-005">NET-005 DR-ギフトオーロラ</option>
 							<option value="NET-006">NET-006 DG-ギフトモルトMASΛ</option></select>
 					</div>
-					<div class="field recaptcha">
-						<div class="g-recaptcha" data-sitekey="6Lfj6f4SAAAAAFN_ESYfOMa9_HK2J445tiTql_xh"></div>
-					</div>
 					<div class="actions">
 						<input type="submit" value="Search">
 						<input type="reset" value="Reset">
 					</div>
 				</form>
+				<div id="search-result">
+					<h2>Search Result:</h2>
+					<img src="" alt="">
+					<div class="description">
+				</div>
+			</div>
 			</div>
 		</div>
-		 <footer></footer>
+	 	<footer></footer>
 	</body>
 </html>
