@@ -1,2 +1,3 @@
 cache/
 .sass-cache/
+application/helpers/debug_helper.php

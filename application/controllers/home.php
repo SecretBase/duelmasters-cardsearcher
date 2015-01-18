@@ -2,6 +2,12 @@
 
 class Home extends MY_Controller {
 
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('CardModel');
+	}
+
 	public function index()
 	{
 		$this->load->model('CardModel');
@@ -11,6 +17,11 @@ class Home extends MY_Controller {
 	public function race_debug()
 	{
 		$this->load->model('RaceModel');
-		var_dump($this->RaceModel->get_all_race());
+		debug($this->RaceModel->get_all_race());
+	}
+
+	public function card_debug()
+	{
+		debug($this->CardModel->get_cards());
 	}
 }

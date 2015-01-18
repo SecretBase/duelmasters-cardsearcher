@@ -4,6 +4,7 @@ class RaceModel extends CI_Model {
 
     private $table = 'race';
     private $table_i18n = 'race_i18n';
+    private $table_card_race = 'card_race';
 
     function __construct()
     {
@@ -153,8 +154,18 @@ class RaceModel extends CI_Model {
 
     public function get_all_race()
     {
-        $this->db->join($this->table_i18n, 'race_id = race_i18n_race_id', 'left');
+        $this->db->join($this->table_i18n, 'race_id = race_i18n_race_id', 'left')
+                    ->select('race_id, race_name');
         return $this->db->get($this->table)->result_array();
+    }
+
+    public function join()
+    {
+        $this->db->from($this->table)
+                 ->join($this->table_i18n, 'race_id = race_i18n_race_id')
+                 ->join($this->table_card_race, 'card_race_card_id = card_id and card_race_race_id = race_id');
+
+        return true;
     }
 
     public function create_race($race_name, $locale = 'ja')
