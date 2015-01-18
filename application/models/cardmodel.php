@@ -9,6 +9,7 @@ class CardModel extends CI_Model {
 		parent::__construct();
 
 		$this->load->model('RaceModel');
+		$this->load->model('CivilizationModel');
 	}
 
 	public function get_cards($criteria = array())
@@ -17,7 +18,7 @@ class CardModel extends CI_Model {
 			$this->db->where('race_id', $criteria['race_id']);
 
 		$this->RaceModel->join();
-		$results_array = $this->db->select('card_id, GROUP_CONCAT(race_name SEPARATOR ",") as race', false)
+		$results_array = $this->db->select('card_id')
 		                          ->get($this->table)->result_array();
 
       	return $results_array;
@@ -36,6 +37,16 @@ class CardModel extends CI_Model {
 	public function update_card()
 	{
 
+	}
+
+	public function get_all_race()
+	{
+		return $this->RaceModel->get_all_race();
+	}
+
+	public function get_all_civilization()
+	{
+		return $this->CivilizationModel->get_all_civilization();
 	}
 
 }
