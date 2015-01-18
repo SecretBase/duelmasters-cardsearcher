@@ -6,11 +6,13 @@ class Home extends MY_Controller {
 	{
 		parent::__construct();
 		$this->load->model('CardModel');
+		// $this->load->model('RaceModel');
 	}
 
 	public function index()
 	{
-		$this->load->model('CardModel');
+		$this->data['races'] = $this->CardModel->get_all_race();
+		$this->data['civilizations'] = $this->CardModel->get_all_civilization();
 		$this->twig->display('home.html', $this->data);
 	}
 
