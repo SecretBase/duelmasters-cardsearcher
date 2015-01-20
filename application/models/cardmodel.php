@@ -10,6 +10,7 @@ class CardModel extends CI_Model {
 
 		$this->load->model('RaceModel');
 		$this->load->model('CivilizationModel');
+		$this->load->model('CardTypeModel');
 	}
 
 	public function get_cards($criteria = array())
@@ -47,6 +48,11 @@ class CardModel extends CI_Model {
 	public function get_all_civilization()
 	{
 		return $this->CivilizationModel->get_all_civilization();
+	}
+
+	public function get_all_cardtype()
+	{
+		return $this->CardTypeModel->get_all_cardtype();
 	}
 
 }
