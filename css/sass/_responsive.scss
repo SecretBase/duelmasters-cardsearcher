@@ -10,15 +10,31 @@
 
     }
   }
+
+  #search-form,
+  #searh-result {
+    width: 100%;
+    max-width: none;
+    float: none;
+  }
 }
 
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 680px) {
   
   .field {
     &.select {
       select {
         width: 100%;
       }
+    }
+
+    .cardtype label {
+      display: block;
+      width: 100%;
     }
   }
 }
