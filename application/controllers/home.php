@@ -13,17 +13,12 @@ class Home extends MY_Controller {
 	{
 		$this->data['races'] = $this->CardModel->get_all_race();
 		$this->data['civilizations'] = $this->CardModel->get_all_civilization();
+		$this->data['cardtype'] = $this->CardModel->get_all_cardtype();
 		$this->twig->display('home.html', $this->data);
 	}
 
-	public function race_debug()
+	public function model_debug()
 	{
-		$this->load->model('RaceModel');
-		debug($this->RaceModel->get_all_race());
-	}
-
-	public function card_debug()
-	{
-		debug($this->CardModel->get_cards());
+		
 	}
 }
