@@ -12,7 +12,7 @@
 
 {% block header %}
 <div class="content">
-    <button class="fa fa-comments"></button>
+    <!-- <button class="fa fa-comments"></button> -->
     <h1>SecondHong Live Boardcast</h1>
 </div>
 {% endblock %}
@@ -20,11 +20,13 @@
 {% block content %}
 <main>
     <div class="content">
-        <div class="twitch-chat hidden-chat">
+        <div class="twitch-chat">
             <iframe src="http://www.twitch.tv/secondhong/chat?popout=" frameborder="0" scrolling="no"></iframe>
         </div>
-        <div class="twitch-live">
-            <iframe src="http://www.twitch.tv/secondhong/embed" frameborder="0" scrolling="no"></iframe>
+        <div class="video-wrapper">
+            <div class="twitch-live">
+                <iframe src="http://www.twitch.tv/secondhong/embed" frameborder="0" scrolling="no"></iframe>
+            </div>
         </div>
     </div>
 </main>

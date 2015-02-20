@@ -7,7 +7,7 @@ var view = {
 var actions = {
     init: function() {
         console.log('actions init.');
-        actions.chat_toggle();
+        // actions.chat_toggle();
     },
     chat_toggle: function() {
 
