@@ -1,0 +1,19 @@
+$content-max-width       : 1200px;
+
+// Must be in sequence from small to large
+$mq-breakpoints: (
+    mobile-3:   320px,
+    mobile-4:   480px,
+    tablet-6:   640px,
+    tablet-7:   768px,
+    tablet-8:   800px,
+    desktop-8:  980px,
+    desktop-9: 1024px,
+    desktop-10: 1152px,
+    desktop-11: 1200px,
+    desktop-12: 1280px,
+    desktop-14: 1440px,
+    desktop-17: 1796px
+);
+
+$mq-show-breakpoints: map-keys($mq-breakpoints);

@@ -1,0 +1,32 @@
+header {
+
+  // border-bottom: 1px solid #414042;
+  @include box-sizing(border-box);
+
+  > .content {
+    @extend .cap;
+    @extend .clearfix;
+    max-width: none;
+    padding: 10px;
+  }
+
+  h1 {
+    float: left;
+    margin: 0;
+  }
+
+  .fa-comments {
+    float: right;
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 30px;
+    line-height: 40px;
+    outline: none;
+
+    &.chat-opened {
+      color: $color-brick-red;
+    }
+  }
+
+}

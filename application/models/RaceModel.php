@@ -161,11 +161,16 @@ class RaceModel extends CI_Model {
 
     public function join()
     {
-        $this->db->select('GROUP_CONCAT(race_name SEPARATOR " / ") as races', false)
-                 ->from($this->table)
+        $this->db->from($this->table)
                  ->join($this->table_i18n, 'race_id = race_i18n_race_id')
                  ->join($this->table_card_race, 'card_race_card_id = card_id and card_race_race_id = race_id');
 
+        return true;
+    }
+
+    public function concat()
+    {
+        $this->db->select('GROUP_CONCAT( DISTINCT race_id SEPARATOR "/") as race_id, GROUP_CONCAT( DISTINCT race_name SEPARATOR "/") as races', false);
         return true;
     }
 

@@ -1,0 +1,28 @@
+@include keyframes(fadeIn) {
+  0% {
+    @include opacity(0);
+  }
+
+  100% {
+    @include opacity(1);
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+.twitch-chat {
+  float: right;
+  height: 100%;
+  overflow: hidden;
+  @include animation(fadeIn 300ms ease-in-out);
+  
+  &.hidden-chat {
+    display: none;
+  }
+
+  iframe {
+    height: 100%;
+  }
+}

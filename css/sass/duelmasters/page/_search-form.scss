@@ -1,0 +1,17 @@
+#search-form {
+  @extend .left;
+  max-width: 640px;
+  margin-bottom: 20px;
+  @include box-sizing(border-box);
+
+  @include mq($until: desktop-12) {
+    float: none;
+    max-width: none;
+  }
+}
+
+#search-result {
+  @extend %no-margin-top-bottom;
+  margin-bottom: 20px;
+  overflow: hidden;
+}

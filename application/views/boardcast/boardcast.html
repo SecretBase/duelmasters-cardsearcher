@@ -1,0 +1,31 @@
+{% extends "template/default.html" %}
+{% set title= "SecondHong Live Boardcast" %}
+
+{% block css %}
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ base_url('css/boardcast.css') }}">
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ base_url('js/boardcast.js') }}"></script>
+{% endblock %}
+
+{% block header %}
+<div class="content">
+    <button class="fa fa-comments"></button>
+    <h1>SecondHong Live Boardcast</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="content">
+        <div class="twitch-chat hidden-chat">
+            <iframe src="http://www.twitch.tv/secondhong/chat?popout=" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="twitch-live">
+            <iframe src="http://www.twitch.tv/secondhong/embed" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+</main>
+{% endblock %}

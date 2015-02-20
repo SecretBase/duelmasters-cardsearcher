@@ -1,0 +1,169 @@
+{% extends "template/default.html" %}
+{% set title = "DuelMasters Card Finder" %}
+
+{% block css %}
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ base_url('css/duelmasters.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="content">
+        <h1>DuelMaster card finder</h1>
+        <form id="search-form" class="" action="{{ site_url() }}">
+            <div class="field select">
+                <label>消費:</label>
+                <select name="cost" id="cost">
+                    <option value="">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                </select>
+            </div>
+            <div class="field checkbox">
+                <span>文明:</span>
+                {% for civilization in civilizations %}
+                <label><input type="checkbox" name="civilizations_id[]" value="{{ civilization.civilization_id }}"><span></span>{{ civilization.civilization_name }}</label>
+                {% endfor %}
+            </div>
+            <div class="field select">
+                <span>種族:</span>
+                <select name="race_id" id="race">
+                    <option value="">全種族</option>
+                    {% for race in races %}
+                    <option value="{{ race.race_id }}">{{ race.race_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="field select">
+                <span>攻擊力:</span>
+                <select name="power" id="power">
+                    <option value="0">0000</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="3000">3000</option>
+                    <option value="4000">4000</option>
+                    <option value="5000">5000</option>
+                    <option value="6000">6000</option>
+                    <option value="7000">7000</option>
+                    <option value="8000">8000</option>
+                    <option value="9000">9000</option>
+                    <option value="10000">10000</option>
+                    <option value="11000">11000</option>
+                    <option value="12000">12000</option>
+                    <option value="13000">13000</option>
+                    <option value="14000">14000</option>
+                    <option value="15000">15000</option>
+                    <option value="16000">16000</option>
+                    <option value="17000">17000</option>
+                    <option value="18000">18000</option>
+                    <option value="19000">19000</option>
+                    <option value="20000">20000</option>
+                    <option value="21000">21000</option>
+                    <option value="22000">22000</option>
+                    <option value="23000">23000</option>
+                    <option value="24000">24000</option>
+                    <option value="25000">25000</option>
+                    <option value="26000">26000</option>
+                    <option value="27000">27000</option>
+                    <option value="28000">28000</option>
+                    <option value="29000">29000</option>
+                    <option value="30000">30000</option>
+                    <option value="31000">31000</option>
+                    <option value="32000">32000</option>
+                    <option value="33000">33000</option>
+                    <option value="34000">34000</option>
+                    <option value="35000">35000</option>
+                    <option value="36000">36000</option>
+                    <option value="37000">37000</option>
+                    <option value="38000">38000</option>
+                    <option value="39000">39000</option>
+                </select>
+            </div>
+            <div class="field checkbox">
+                <span>卡種:</span>
+                <div class="cardtype">
+                    {% for cardtype in cardtype %}
+                    <label><input type="checkbox" name="card_type[]" value="{{ cardtype.cardtype_id }}"><span></span>{{ cardtype.cardtype_name }}</label>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="field select">
+                <span>系列:</span>
+                <select name="set_code" id="set-code">
+                    <option value="">全系列</option>
+                    <option value="DMD-15">DMD-15 熱血の戦闘龍</option>
+                    <option value="DMD-16">DMD-16 正義の天聖龍</option>
+                    <option value="DMD-17">DMD-17 神秘の結晶龍</option>
+                    <option value="DMD-18">DMD-18 燃えよ龍剣ガイアール</option>
+                    <option value="DMD-19">DMD-19 滅びの龍刃 ディアボロス</option>
+                    <option value="DMR-11">DMR-11 ウルトラVマスター</option>
+                    <option value="DMR-12">DMR-12 オメガ∞マックス</option>
+                    <option value="DMR-13">DMR-13 ドラゴン・サーガ</option>
+                    <option value="DMR-14">DMR-14 暴龍ガイグレン</option>
+                    <option value="DMX-16">DMX-16 超王道戦略ファンタジスタ12</option>
+                    <option value="DMX-17">DMX-17 龍の祭典! ドラゴン魂フェス!!</option>
+                    <option value="DM-Y12">DM-Y12 第12期プロモーション・カード</option>
+                    <option value="DM-Y13">DM-Y13 第13期プロモーション・カード</option>
+                    <option value="DM-Sanctuary">DM-Sanctuary 殿堂</option>
+                    <option value="DM-NEW">DM-NEW 【未發售卡牌】</option>
+                    <option value="NET-001">NET-001 田園-龍要塞水單</option>
+                    <option value="NET-002">NET-002 CK-龍帝式龍龍布丁</option>
+                    <option value="NET-003">NET-003 CT-關東2014夏季大賽冠軍</option>
+                    <option value="NET-004">NET-004 DR-オボロ2ndヒラメキスネーク</option>
+                    <option value="NET-005">NET-005 DR-ギフトオーロラ</option>
+                    <option value="NET-006">NET-006 DG-ギフトモルトMASΛ</option>
+                </select>
+            </div>
+            <div class="actions">
+                <input type="submit" value="Search">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+        <div id="search-result">
+            <h2>Search Result:</h2>
+            <img src="" alt="">
+            <div class="description">
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
