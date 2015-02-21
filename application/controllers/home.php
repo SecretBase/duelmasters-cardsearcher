@@ -17,7 +17,7 @@ class Home extends MY_Controller {
     public function boardcast()
     {
         $get = $this->input->get();
-        $ip_address = $this->input->server('HTTP_X_CLIENT_IP');
+        $ip_address = empty($this->input->server('HTTP_X_CLIENT_IP')) ? $this->input->ip_address() : $this->input->server('HTTP_X_CLIENT_IP');
 
         $this->load->model('ViewcountModel');
 

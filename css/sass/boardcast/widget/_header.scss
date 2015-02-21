@@ -23,6 +23,7 @@ header {
     font-size: 20px;
     line-height: 40px;
     font-family: $font-secondary;
+    margin-right: 10px;
 
     &:before {
       @extend .fa;
@@ -36,12 +37,17 @@ header {
     background-color: transparent;
     border: 0;
     color: #fff;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 40px;
     outline: none;
+    display: none;
 
     &.chat-opened {
       color: $color-brick-red;
+    }
+
+    @include mq($until: desktop-11) {
+      display: block;
     }
   }
 }

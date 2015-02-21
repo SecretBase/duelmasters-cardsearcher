@@ -20,7 +20,9 @@
   @include animation(fadeIn 300ms ease-in-out);
   
   &.hidden-chat {
-    display: none;
+    @include mq($until: desktop-10) {
+      display: none;
+    }
   }
 
   iframe {
