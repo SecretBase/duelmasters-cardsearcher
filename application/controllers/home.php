@@ -2,42 +2,58 @@
 
 class Home extends MY_Controller {
 
-  function __construct()
-  {
-    parent::__construct();
-    $this->load->model('CardModel');
-    // $this->load->model('RaceModel');
-  }
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('CardModel');
+        // $this->load->model('RaceModel');
+    }
 
-  public function index()
-  {
-    redirect('boardcast');
-  }
+    public function index()
+    {
+        redirect('boardcast');
+    }
 
-  public function boardcast()
-  {
-    $this->twig->display('boardcast/boardcast.html', $this->data);
-  }
+    public function boardcast()
+    {
+        $get = $this->input->get();
+        $ip_address = $this->input->ip_address();
 
-  public function duelmasters()
-  {
-    $this->data['races'] = $this->CardModel->get_all_race();
-    $this->data['civilizations'] = $this->CardModel->get_all_civilization();
-    $this->data['cardtype'] = $this->CardModel->get_all_cardtype();
+        $this->load->model('ViewcountModel');
 
-    // debug($this->CardModel->get_cards());
-    $this->twig->display('duelmasters/duelmasters.html', $this->data);
-  }
+        $this->data['views'] = $get['views'];
 
-  public function model_debug()
-  {
-    
-  }
+        if ($this->ViewcountModel->view_count_check($ip_address))
+            $this->ViewcountModel->add_views($ip_address);
 
-  public function testing()
-  {
-    $json['status'] = 'success';
-    $json['result_message'] = 'Data come back';
-    echo json_encode($json);
-  }
+        if (empty($get['views']) && ! is_numeric($get['views']))
+        {
+            $views = $this->ViewcountModel->get_views();
+            redirect("boardcast?views={$views}");
+        }
+
+        $this->twig->display('boardcast/boardcast.html', $this->data);
+    }
+
+    public function duelmasters()
+    {
+        $this->data['races'] = $this->CardModel->get_all_race();
+        $this->data['civilizations'] = $this->CardModel->get_all_civilization();
+        $this->data['cardtype'] = $this->CardModel->get_all_cardtype();
+
+        // debug($this->CardModel->get_cards());
+        $this->twig->display('duelmasters/duelmasters.html', $this->data);
+    }
+
+    public function model_debug()
+    {
+
+    }
+
+    public function testing()
+    {
+        $json['status'] = 'success';
+        $json['result_message'] = 'Data come back';
+        echo json_encode($json);
+    }
 }
