@@ -17,7 +17,7 @@ class Home extends MY_Controller {
     public function boardcast()
     {
         $get = $this->input->get();
-        $ip_address = $this->input->ip_address();
+        $ip_address = $this->input->server('HTTP_X_CLIENT_IP');
 
         $this->load->model('ViewcountModel');
 
@@ -39,17 +39,5 @@ class Home extends MY_Controller {
 
         // debug($this->CardModel->get_cards());
         $this->twig->display('duelmasters/duelmasters.html', $this->data);
-    }
-
-    public function model_debug()
-    {
-
-    }
-
-    public function testing()
-    {
-        $json['status'] = 'success';
-        $json['result_message'] = 'Data come back';
-        echo json_encode($json);
     }
 }
