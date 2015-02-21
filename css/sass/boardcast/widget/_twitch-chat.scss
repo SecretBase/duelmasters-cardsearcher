@@ -20,7 +20,7 @@
   @include animation(fadeIn 300ms ease-in-out);
   
   &.hidden-chat {
-    @include mq($until: desktop-11) {
+    @include mq($until: desktop-10) {
       display: none;
     }
   }
