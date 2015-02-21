@@ -19,8 +19,9 @@ class ViewcountModel extends CI_Model {
                             ->where('view_count_ip_address', $ip_address)
                             ->get($this->table);
 
-        if ($results->num_rows > 0)
+        if ($results->num_rows() > 0) {
             return false;
+        }
 
         return true;
     }

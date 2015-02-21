@@ -3,6 +3,7 @@
 
 {% block css %}
 <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{ base_url('css/boardcast.css') }}">
 {% endblock %}
 
@@ -13,6 +14,7 @@
 {% block header %}
 <div class="content">
     <!-- <button class="fa fa-comments"></button> -->
+    <span class="view-count">{{ views_count }}</span>
     <h1>SecondHong Live Boardcast</h1>
 </div>
 {% endblock %}

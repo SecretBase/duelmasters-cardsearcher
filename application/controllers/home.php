@@ -26,11 +26,7 @@ class Home extends MY_Controller {
         if ($this->ViewcountModel->view_count_check($ip_address))
             $this->ViewcountModel->add_views($ip_address);
 
-        if (empty($get['views']) && ! is_numeric($get['views']))
-        {
-            $views = $this->ViewcountModel->get_views();
-            redirect("boardcast?views={$views}");
-        }
+        $this->data['views_count'] = $this->ViewcountModel->get_views();
 
         $this->twig->display('boardcast/boardcast.html', $this->data);
     }

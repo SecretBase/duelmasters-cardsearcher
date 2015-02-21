@@ -15,6 +15,23 @@ header {
     margin: 0;
   }
 
+  .view-count {
+
+    float: right;
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    font-family: $font-secondary;
+
+    &:before {
+      @extend .fa;
+      @extend .fa-eye;
+      margin-right: 10px;
+    }
+  }
+
   .fa-comments {
     float: right;
     background-color: transparent;
