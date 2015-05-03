@@ -42,6 +42,7 @@ $route['default_controller'] = "home";
 $route['404_override'] = '';
 
 $route['boardcast'] = "home/boardcast";
+$route['get_viewers'] = "home/get_viewers";
 $route['duelmasters'] = "home/duelmasters";
 $route['home/(:any)'] = "home/index";
 

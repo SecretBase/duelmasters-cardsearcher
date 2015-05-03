@@ -15,6 +15,7 @@
 <div class="content">
     <button class="fa fa-comments"></button>
     <span class="view-count">{{ views_count }}</span>
+    <form action="{{ site_url('get_viewers') }}" class="viewers"><span>{{ chatroom.chatter_count }}</span></form>
     <h1>SecondHong Live Boardcast</h1>
 </div>
 {% endblock %}

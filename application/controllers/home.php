@@ -5,8 +5,6 @@ class Home extends MY_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('CardModel');
-        // $this->load->model('RaceModel');
     }
 
     public function index()
@@ -27,17 +25,25 @@ class Home extends MY_Controller {
             $this->ViewcountModel->add_views($ip_address);
 
         $this->data['views_count'] = $this->ViewcountModel->get_views();
+        $this->data['chatroom'] = json_decode(file_get_contents("https://tmi.twitch.tv/group/user/secondhong/chatters"), true);
 
         $this->twig->display('boardcast/boardcast.html', $this->data);
     }
 
     public function duelmasters()
     {
+        $this->load->model('CardModel');
+        // $this->load->model('RaceModel');
         $this->data['races'] = $this->CardModel->get_all_race();
         $this->data['civilizations'] = $this->CardModel->get_all_civilization();
         $this->data['cardtype'] = $this->CardModel->get_all_cardtype();
 
         // debug($this->CardModel->get_cards());
         $this->twig->display('duelmasters/duelmasters.html', $this->data);
+    }
+
+    public function get_viewers() {
+        $json['chatroom'] = json_decode(file_get_contents("https://tmi.twitch.tv/group/user/secondhong/chatters"), true);
+        echo json_encode($json, JSON_FORCE_OBJECT);
     }
 }

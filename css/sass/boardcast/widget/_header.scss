@@ -32,6 +32,25 @@ header {
     }
   }
 
+  .viewers {
+    
+    float: right;
+    font-size: 20px;
+    line-height: 40px;
+    font-family: $font-secondary;
+    margin-right: 20px;
+
+    span {
+      
+    }
+
+    &:before {
+      @extend .fa;
+      @extend .fa-user;
+      margin-right: 10px;
+    }
+  }
+
   .fa-comments {
     float: right;
     background-color: transparent;
