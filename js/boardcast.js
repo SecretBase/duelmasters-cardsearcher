@@ -63,7 +63,7 @@ var actions = {
             });
         }
 
-        setInterval(check_status, 10000);
+        setInterval(check_status, 30000);
     }
 };
 
