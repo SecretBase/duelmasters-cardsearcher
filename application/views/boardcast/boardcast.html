@@ -1,5 +1,5 @@
 {% extends "template/default.html" %}
-{% set title= "SecondHong Live Boardcast" %}
+{% set title = "SecondHong Live Boardcast" %}
 
 {% block css %}
 <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -15,8 +15,10 @@
 <div class="content">
     <button class="fa fa-comments"></button>
     <span class="view-count">{{ views_count }}</span>
-    <form action="{{ site_url('get_viewers') }}" class="viewers"><span>{{ chatroom.chatter_count }}</span></form>
-    <h1>SecondHong Live Boardcast</h1>
+    <form action="{{ site_url('get_viewers') }}" class="viewers {% if twitch.stream is not empty %}live{% endif %}">
+        <span>{{ twitch.stream is empty ? 0 : twitch.stream.viewers }}</span>
+    </form>
+    <h1 class="stream-title" data-title="SecondHong Live Boardcast">{{ twitch.stream is empty ? "SecondHong Live Boardcast" : twitch.stream.channel.status }}</h1>
 </div>
 {% endblock %}
 

@@ -40,8 +40,8 @@ header {
     font-family: $font-secondary;
     margin-right: 20px;
 
-    span {
-      
+    &.live:before {
+      color: $color-brick-red;
     }
 
     &:before {

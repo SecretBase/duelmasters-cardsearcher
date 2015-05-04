@@ -25,7 +25,8 @@ class Home extends MY_Controller {
             $this->ViewcountModel->add_views($ip_address);
 
         $this->data['views_count'] = $this->ViewcountModel->get_views();
-        $this->data['chatroom'] = json_decode(file_get_contents("https://tmi.twitch.tv/group/user/secondhong/chatters"), true);
+
+        $this->data['twitch'] = json_decode(file_get_contents("https://api.twitch.tv/kraken/streams/secondhong"), true);
 
         $this->twig->display('boardcast/boardcast.html', $this->data);
     }
@@ -43,7 +44,6 @@ class Home extends MY_Controller {
     }
 
     public function get_viewers() {
-        $json['chatroom'] = json_decode(file_get_contents("https://tmi.twitch.tv/group/user/secondhong/chatters"), true);
-        echo json_encode($json, JSON_FORCE_OBJECT);
+        echo file_get_contents("https://api.twitch.tv/kraken/streams/secondhong");
     }
 }

@@ -25,24 +25,45 @@ var actions = {
     viewers_polling: function() {
 
         var $viewers =  $('.viewers')
-            $counter = $viewers.find(' > span');
+            $counter = $viewers.find(' > span'),
+            $stream_title = $('.stream-title'),
+            default_title = $stream_title.data('title'),
+            hidden = null;
 
-        function check_current_viewers() {
-
-            setTimeout(function() {
-                $.ajax({
-                    url: $viewers.attr('action'),
-                    type: 'get',
-                    dataType: 'json',
-                    success: function(data) {
-                        $counter.text(data.chatroom.chatter_count);
-                    },
-                    complete: check_current_viewers
-                });
-            }, 30000);
+        if (typeof document.hidden !== "undefined") { 
+          hidden = "hidden";
+        } else if (typeof document.mozHidden !== "undefined") {
+          hidden = "mozHidden";
+        } else if (typeof document.msHidden !== "undefined") {
+          hidden = "msHidden";
+        } else if (typeof document.webkitHidden !== "undefined") {
+          hidden = "webkitHidden";
         }
 
-        check_current_viewers();
+        function check_status() {
+
+            if (document[hidden])
+                return;
+
+            $.ajax({
+                url: $viewers.attr('action'),
+                type: 'get',
+                dataType: 'json',
+                success: function(data) {
+                    if (data.stream !== null) {
+                        $counter.text(data.stream.viewers);
+                        $viewers.addClass('live');
+                        $stream_title.text(data.stream.channel.status);
+                    } else {
+                        $stream_title.text(default_title);
+                        $viewers.removeClass('live');
+                        $counter.text(0);
+                    }
+                }
+            });
+        }
+
+        setInterval(check_status, 10000);
     }
 };
 
